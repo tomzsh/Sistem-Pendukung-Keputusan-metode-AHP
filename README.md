@@ -15,6 +15,12 @@ Sebelum memulai, pastikan sistem Anda memiliki:
 - Node.js >= 18
 - Docker dan Docker Compose (opsional, untuk Laravel Sail)
 
+## Preview
+
+### Dashboard
+<img src="docs/images/dashboard.png" width="700"/>
+
+
 ## Instalasi
 
 ### 1. Clone Repository
