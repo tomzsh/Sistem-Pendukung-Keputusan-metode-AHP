@@ -265,7 +265,7 @@ new class extends Component {
 
         <div class="flex items-center gap-2">
             {{-- untuk mengaktifkan fitur export, install phpoffice/phpspreadsheet dan maatwebsite/excel --}}
-            {{-- <flux:button type="button" wire:click="openExportModal" variant="outline" icon="arrow-up-tray">Export</flux:button> --}}
+            <flux:button type="button" wire:click="openExportModal" variant="outline" icon="arrow-up-tray">Export</flux:button>
             <flux:button wire:click="simpanHasil" variant="primary" icon="arrow-down-tray"
                 :disabled="!$dataLengkap">
                 Simpan Hasil
