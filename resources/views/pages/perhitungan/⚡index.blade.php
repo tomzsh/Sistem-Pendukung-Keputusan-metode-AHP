@@ -176,25 +176,12 @@ new class extends Component {
 
     public function exportPdf()
     {
-        $kriterias   = $this->getKriterias();
-        $alternatifs = $this->getAlternatifs();
-
-        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('exports.perhitungan-pdf', [
-            'kriterias'        => $kriterias,
-            'alternatifs'      => $alternatifs,
-            'bobotKriteria'    => $this->bobotKriteria,
-            'bobotSubKriteria' => $this->bobotSubKriteria,
-            'penilaianMatrix'  => $this->penilaianMatrix,
-            'nilaiMatrix'      => $this->nilaiMatrix,
-            'skorMatrix'       => $this->skorMatrix,
-            'totalSkor'        => $this->totalSkor,
-        ])->setPaper('a4', 'landscape');
-
-        return response()->streamDownload(
-            fn() => print($pdf->output()),
-            'perhitungan-ahp-' . now()->format('Ymd-His') . '.pdf',
-            ['Content-Type' => 'application/pdf']
-        );
+        return (new \App\Exports\PerhitunganPdfExport(
+            $this->bobotKriteria, $this->bobotSubKriteria,
+            $this->penilaianMatrix, $this->nilaiMatrix,
+            $this->skorMatrix, $this->totalSkor,
+            $this->getKriterias(), $this->getAlternatifs(),
+        ))->download();
     }
 
     public function exportDocx()
