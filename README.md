@@ -81,7 +81,11 @@ Untuk mengaktifkan fitur export hasil analisis:
 edit resources/views/pages/perhitungan/⚡index.blade.php baris 281
 
 ```bash
-composer require phpoffice/phpspreadsheet maatwebsite/excel
+composer require phpoffice/phpspreadsheet maatwebsite/excel phpoffice/phpword barryvdh/laravel-dompdf
+```
+```bash
+#opsional tapi recommended
+php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
 ```
 
 ### 8. Jalankan Aplikasi
