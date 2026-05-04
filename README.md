@@ -26,7 +26,7 @@ Sebelum memulai, pastikan sistem Anda memiliki:
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/sistem-pendukung-keputusan-ahp.git
+git clone https://github.com/tomzsh/sistem-pendukung-keputusan-ahp.git
 cd sistem-pendukung-keputusan-ahp
 ```
 
