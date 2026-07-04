@@ -1,58 +1,48 @@
-## Sistem
-- **Framework**: Laravel v13
-- **Database**: MySQL
-- **Frontend**: Livewire v4, Flux UI v2
-- **Styling**: TailwindCSS v4
-- **PHP**: v8.3
+# Decision Support System - AHP Method
 
-## Persyaratan Sistem
+## Tech Stack
 
-Sebelum memulai, pastikan sistem Anda memiliki:
+* Laravel 13
+* MySQL
+* Livewire 4
+* Flux UI 2
+* Tailwind CSS 4
+* PHP 8.3
 
-- PHP >= 8.3
-- Composer
-- MySQL >= 8.0
-- Node.js >= 18
-- Docker dan Docker Compose (opsional, untuk Laravel Sail)
+## Requirements
 
-## Preview
+Make sure your system has:
 
-### Dashboard
-<img src="docs/images/dashboard.png" width="700"/>
+* PHP 8.3+
+* Composer
+* MySQL 8.0+
+* Node.js 18+
+* Docker & Docker Compose (optional)
 
+## Installation
 
-## Instalasi
-
-### 1. Clone Repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/tomzsh/sistem-pendukung-keputusan-ahp.git
 cd sistem-pendukung-keputusan-ahp
 ```
 
-### 2. Install Dependencies
+### Install dependencies
 
 ```bash
-# Install PHP dependencies
 composer install
-
-# Install Node dependencies
 npm install
 ```
 
-### 3. Konfigurasi Environment
+### Configure environment
 
 ```bash
-# Copy file environment
 cp .env.example .env
-
-# Generate application key
 php artisan key:generate
 ```
 
-### 4. Konfigurasi Database
-
-Edit file `.env` dan sesuaikan konfigurasi database:
+Update your database settings in `.env`:
 
 ```env
 DB_CONNECTION=mysql
@@ -63,56 +53,60 @@ DB_USERNAME=root
 DB_PASSWORD=your_password
 ```
 
-### 5. Jalankan Migrasi Database
+### Run migrations
 
 ```bash
 php artisan migrate
 ```
 
-### 6. Compile Assets
+### Build assets
 
 ```bash
 npm run build
 ```
 
-Atau untuk development dengan hot reload:
+For development mode:
 
 ```bash
 npm run dev
 ```
 
-### 7. Install Dependencies Tambahan (Opsional)
+### Optional packages
 
-Untuk mengaktifkan fitur export hasil analisis:
-edit resources/views/pages/perhitungan/⚡index.blade.php baris 281
+To enable export features (Excel, Word, PDF):
 
 ```bash
 composer require phpoffice/phpspreadsheet maatwebsite/excel phpoffice/phpword barryvdh/laravel-dompdf
 ```
+
+Recommended:
+
 ```bash
-#opsional tapi recommended
 php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
 ```
 
-### 8. Jalankan Aplikasi
+You may also need to edit:
+
+```text
+resources/views/pages/perhitungan/index.blade.php
+```
+
+### Run the application
 
 ```bash
-# Menggunakan development server
 composer run dev
 ```
 
-Akses aplikasi di browser: `http://127.0.0.1:8000/`
+Open:
 
-## Dukungan
+```text
+http://127.0.0.1:8000
+```
 
-Jika Anda mengalami masalah (error/bug) atau memiliki pertanyaan, silakan buka issue di repository ini.
+## Support
 
-## Kontak
+If you find a bug or have questions, please open an issue in the repository.
 
-Untuk pertanyaan, atau saran tertentu:
+## Contact
 
-- **Email**: gus.tom.zsh@gmail.com
-
----
-
-TIDAK BOLEH digunakan untuk tujuan komersial tanpa izin tertulis dari pemilik
+Email: [gus.tom.zsh@gmail.com](mailto:gus.tom.zsh@gmail.com)
